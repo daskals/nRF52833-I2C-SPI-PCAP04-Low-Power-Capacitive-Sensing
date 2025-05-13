@@ -106,13 +106,22 @@ This sets the digital pin P0.23 high/low and initializes the corresponding drive
 | ---- | ---------------------- |
 | LED1 | SAADC sample complete  |
 | LED2 | PCAP04 reading logged  |
-| LED3 | SAADC calibration done |
 
 ---
 
 📊 Example Output (Debug Terminal)
 Below is an example log captured during operation using the I2C interface:
 ![Debug Terminal Output](Results_i2c.PNG)
+
+📉 Power Consumption Comparison (TBD)
+
+The following table will show upcoming results from Nordic Power Profiler Kit II (PPK2), comparing I2C and SPI modes for capacitive sensing using PCAP04. Measurements are in progress.
+| Interface                     | Average Current | Max Current  | Plot                                     |
+| ----------------------------- | --------------- | -----------  | ---------------------------------------- |
+| I2C					        | TBD µA         | TBD mA      | ![main](plots/ADC_main_0_67uA.PNG)       |
+| SPI							| TBD µA         | TBD mA      | ![polling](plots/ADC_polling_0_45uA.PNG) |
+
+These results highlight the lower average current and charge consumption of the polling-based SAADC sampling approach.
 
 ## 📄 License
 
