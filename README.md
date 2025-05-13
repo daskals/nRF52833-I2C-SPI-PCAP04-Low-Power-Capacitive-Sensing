@@ -4,6 +4,9 @@ This repository contains a low-power capacitive sensing application using the **
 
 The Real-Time Counter (RTC) is configured to wake up the MCU every second to acquire a capacitive measurement and then return the system to sleep, optimizing power consumption.
 
+> 🛠️ **This implementation is based on and adapted from:**
+> - [sciosense/pcap04-sample-code](https://github.com/sciosense/pcap04-sample-code)
+> - [ShayanMajumder/PCap04-Toolkit](https://github.com/ShayanMajumder/PCap04-Toolkit)
 ---
 
 ## 📦 Features
