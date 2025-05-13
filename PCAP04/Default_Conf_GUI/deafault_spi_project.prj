@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Cluster>
+<Name>PCap04 Project File</Name>
+<NumElts>8</NumElts>
+<String>
+<Name>PCap_Version</Name>
+<Val>PCap04v1</Val>
+</String>
+<Boolean>
+<Name>I2C_EN</Name>
+<Val>0</Val>
+</Boolean>
+<String>
+<Name>Firmware</Name>
+<Val>PCap04v1_standard_v1.hex%
+24 05 A0 01 20 55 42 5C 48 B1 07 92 02 20 13 02 
+20 93 02 B2 02 78 20 54 B3 06 91 00 7F 20 86 20 
+54 B6 03 72 62 20 54 B7 00 00 42 5C A1 00 49 B0 
+00 49 40 AB 5D 92 1C 90 02 7F 20 86 66 67 76 77 
+66 7A CF CD E6 43 F1 44 29 E0 7A DC E7 41 32 AA 
+01 99 FD 7B 01 7A CF EB E6 43 F1 44 29 E0 7A C1 
+E7 41 32 6A DE 44 7A CF EA E6 43 F1 44 29 E0 6A 
+DF 44 7A C4 E7 41 32 AB 05 7A C1 E1 43 E0 3A 7A 
+C0 E1 43 E0 3A 02 7A CF E6 E6 43 F1 44 29 E0 7A 
+EF 44 02 20 9D 84 01 21 2E 21 74 20 37 C8 7A E7 
+43 49 11 6A D4 44 7A C1 D8 E6 43 E9 44 1C 43 13 
+AB 63 6A DE 41 AB 0B 46 46 46 7A DF FF FF FF FF 
+E3 41 32 1C 44 E9 13 6A D4 13 41 AA DF 7A C5 E1 
+43 49 E0 34 7A CF E3 E6 43 F1 44 29 E0 DB C0 27 
+E5 6A DF 43 7A C8 E7 41 30 AB 03 86 01 92 37 7A 
+C6 E7 41 7A FA E7 43 EA 44 7A C1 E1 E6 43 E9 44 
+25 E0 7A C6 E7 41 7A FA E7 43 EA 44 7A C0 E7 43 
+E9 44 25 E0 92 10 7A E1 44 E2 44 E3 44 E4 44 E5 
+44 E6 44 E7 44 E8 44 C1 D8 24 3E 92 FF 02 7A CF 
+D7 E6 43 F1 44 7A D0 E7 43 2A 2A 32 AB 03 42 5C 
+92 03 7A C0 E1 43 D9 27 90 6A DF 43 7A C8 E7 41 
+32 AB 03 86 01 92 11 7A C2 43 7A E7 44 6A C6 44 
+7A C3 43 7A E8 44 6A C7 44 C1 D4 24 57 7A C8 E1 
+43 E0 3A 02 7A CF E7 E6 43 F1 44 29 E0 7A C7 E1 
+41 6A D4 45 5A 25 36 46 46 46 46 7A E9 44 7A C0 
+E7 43 55 7A EA 45 7A E9 51 1C 43 6A CA 44 1D 43 
+6A CB 44 7A C1 CA E6 43 E9 44 7A C1 E1 43 7A CC 
+E0 E6 41 2C 42 7A C5 E1 43 49 E0 34 7A C1 CC E6 
+43 E9 44 7A C1 E1 43 2C 70 7A CC 43 7A CF 44 7A 
+CD 43 7A CE 44 6A CA 43 C1 CA 7A E6 41 E9 45 2B 
+AE EE 44 7A C1 CA E6 43 E9 44 7A C1 E1 43 7A CC 
+EC E6 41 2C 42 7A C5 E1 43 49 E0 34 7A C1 CC E6 
+43 E9 44 7A C1 E1 43 2C 70 7A CC 43 7A CF 44 7A 
+CD 43 7A CE 44 6A CB 43 C1 CA 7A E6 41 E9 45 2B 
+AE ED 44 02</Val>
+</String>
+<Cluster>
+<Name>Calibration</Name>
+<NumElts>6</NumElts>
+<String>
+<Name>Address</Name>
+<Val>800	804	808	810	812	816	820	822</Val>
+</String>
+<String>
+<Name>Length</Name>
+<Val>4	4	2	2	4	4	2	2</Val>
+</String>
+<String>
+<Name>Name</Name>
+<Val>pi0_result0	pi0_result1	pi0_pulse0 (min)	pi0_pulse1 (max)	pi1_result0	pi1_result1	pi1_pulse0 (min)	pi1_pulse1 (max)</Val>
+</String>
+<String>
+<Name>Value</Name>
+<Val>07333335	08CCCCCD	0001	03FE	01666666	02333333	0001	03FE</Val>
+</String>
+<String>
+<Name>fpp</Name>
+<Val>27	27	0	0	25	25	0	0</Val>
+</String>
+<String>
+<Name>s/u</Name>
+<Val>u	u	u	u	u	u	u	u</Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Calibration Misc</Name>
+<NumElts>3</NumElts>
+<String>
+<Name>Address</Name>
+<Val>956</Val>
+</String>
+<String>
+<Name>Name</Name>
+<Val>																															</Val>
+</String>
+<String>
+<Name>Value</Name>
+<Val>0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	</Val>
+</String>
+</Cluster>
+<String>
+<Name>Config</Name>
+<Val>1058001D	200F0010	0007D000	03FF0800	00002400	30500100	08500473	0882005A	40470008	71000000	00080000	01000000	00000000</Val>
+</String>
+<Cluster>
+<Name>Settings</Name>
+<NumElts>9</NumElts>
+<String>
+<Name>Name</Name>
+<Val>C0/Cref	C1/Cref	C2/Cref	C3/Cref	C4/Cref	C5/Cref	PT1/Ref	Alu/Ref</Val>
+</String>
+<String>
+<Name>Filter</Name>
+<Val>0	0	0	0	0	0	0	5</Val>
+</String>
+<String>
+<Name>Signed</Name>
+<Val>s	s	s	s	s	s	s	s	s	s	s	s</Val>
+</String>
+<String>
+<Name>fpp</Name>
+<Val>-27	-27	-27	-27	-27	-27	-25	-25</Val>
+</String>
+<String>
+<Name>Factor</Name>
+<Val>10p	10p	10p	10p	10p	10p	1	1</Val>
+</String>
+<String>
+<Name>Offset</Name>
+<Val>0	0	0	0	0	0	0	0</Val>
+</String>
+<String>
+<Name>Span</Name>
+<Val>10p	10p	10p	10p	10p	10p	1	1</Val>
+</String>
+<String>
+<Name>Mean</Name>
+<Val>50</Val>
+</String>
+<String>
+<Name>Reduction</Name>
+<Val>1</Val>
+</String>
+</Cluster>
+<String>
+<Name>Specials</Name>
+<Val>Timeout: 0x0
+
+</Val>
+</String>
+</Cluster>
