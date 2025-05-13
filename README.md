@@ -59,8 +59,8 @@ The Real-Time Counter (RTC) is configured to wake up the MCU every second to acq
 
 | Function         | Pin   | Notes            |
 | ---------------- | ----- | ---------------- |
-| I2C SCL          | P0.27 | Internal pull-up |
-| I2C SDA          | P0.26 | Internal pull-up |
+| I2C SCL          | P0.27 | External DK pull-up |
+| I2C SDA          | P0.26 | External DK pull-up |
 | SPI SCK          | P0.20 |                  |
 | SPI MOSI         | P0.21 |                  |
 | SPI MISO         | P0.19 |                  |
@@ -109,11 +109,11 @@ This sets the digital pin P0.23 high/low and initializes the corresponding drive
 
 ---
 
-📊 Example Output (Debug Terminal)
+## 📊 Example Output (Debug Terminal)
 Below is an example log captured during operation using the I2C interface:
 ![Debug Terminal Output](Results_i2c.PNG)
 
-📉 Power Consumption Comparison (TBD)
+## 📉 Power Consumption Comparison (TBD)
 
 The following table will show upcoming results from Nordic Power Profiler Kit II (PPK2), comparing I2C and SPI modes for capacitive sensing using PCAP04. Measurements are in progress.
 | Interface                     | Average Current | Max Current  | Plot                                     |
