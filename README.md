@@ -121,8 +121,8 @@ Below is an example log captured during operation using the I2C interface:
 The following table will show upcoming results from Nordic Power Profiler Kit II (PPK2), comparing I2C and SPI modes for capacitive sensing using PCAP04. Measurements are in progress.
 | Interface                     | Average Current | Max Current  | Plot                                     |
 | ----------------------------- | --------------- | -----------  | ---------------------------------------- |
-| I2C					        | TBD µA         | TBD mA      | ![main](plots/ADC_main_0_67uA.PNG)       |
-| SPI							| TBD µA         | TBD mA      | ![polling](plots/ADC_polling_0_45uA.PNG) |
+| I2C					        | TBD µA         | TBD mA      | ![main](plots/pcap04_i2c_2_2V.PNG) (plots/pcap04_i2c_2_5V.PNG)        |
+| SPI							| TBD µA         | TBD mA      | ![polling](plots/pcap04_spi_2_2V.PNG)(plots/pcap04_spi_2_5V.PNG) |
 
 These results highlight the lower average current and charge consumption of the polling-based SAADC sampling approach.
 
