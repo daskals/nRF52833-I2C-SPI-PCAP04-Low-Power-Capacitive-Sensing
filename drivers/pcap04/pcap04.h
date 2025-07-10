@@ -110,6 +110,11 @@ void read_nvram(const uint16_t addr);
  */
 void write_nvram(const uint16_t addr);
 
+// Additional public functions
+bool validate_nvram(void);
+void print_config(void);
+bool is_pcap_initialized(void);
+
 #ifdef __cplusplus
 }
 #endif

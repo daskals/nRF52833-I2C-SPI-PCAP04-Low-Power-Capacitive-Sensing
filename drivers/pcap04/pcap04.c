@@ -294,7 +294,7 @@ void write_config(const uint8_t addr, const uint8_t data)
  */
 void readall_nvram()
 {
-
+  NRF_LOG_INFO("Read all NVRAM");
   for (uint32_t addr = 0; addr < PCAP_NVRAM_SIZE; addr++)
   {
     read_nvram(addr);
@@ -354,6 +354,7 @@ void read_nvram(const uint16_t addr)
  * @brief Writes all NVRAM data to the PCAP04 device.
  */
 void writeall_nvram(){
+  NRF_LOG_INFO("Write nvram ")
   for (uint32_t addr = 0; addr < PCAP_NVRAM_SIZE; addr++)
   {
     if (addr != PCAP_NVRAM_RUNBIT_INDEX){
@@ -413,33 +414,33 @@ void write_nvram(const uint16_t addr){
 /**
  * @brief Validates the NVRAM data by comparing it with the mirror copy.
  */
-void validate_nvram(){
+bool validate_nvram(){
+    static uint8_t* nvram_p;
+    static uint8_t* nvram_mirror_p;
+    bool all_matched = true;
 
-  static uint8_t* nvram_p;
-  static uint8_t* nvram_mirror_p;
-  bool all_matched = true;
+    readall_nvram();
 
-  readall_nvram();
+    nvram_p = &pcap_nvram.FW.data[0];
+    nvram_mirror_p = &pcap_nvram_mirror.FW.data[0];
 
-  nvram_p = &pcap_nvram.FW.data[0];
-  nvram_mirror_p = &pcap_nvram_mirror.FW.data[0];
-
-  for (size_t addr = 0; addr < PCAP_NVRAM_SIZE; addr++)
-  {
-    if (*nvram_p != *nvram_mirror_p){
-      NRF_LOG_INFO("Mismatch at address 0x%04X: NVRAM=0x%02X, Mirror=0x%02X", (unsigned int)addr, *nvram_p, *nvram_mirror_p);
+    for (size_t addr = 0; addr < PCAP_NVRAM_SIZE; addr++)
+    {
+        if (*nvram_p != *nvram_mirror_p){
+            NRF_LOG_INFO("Mismatch at address 0x%04X: NVRAM=0x%02X, Mirror=0x%02X", (unsigned int)addr, *nvram_p, *nvram_mirror_p);
             NRF_LOG_FLUSH();
-      nrf_delay_ms(100);
-      all_matched = false;
+            nrf_delay_ms(10);
+            all_matched = false;
+        }
+        nvram_p++;
+        nvram_mirror_p++;
     }
-    nvram_p++;
-    nvram_mirror_p++;
-  } 
-  if (all_matched)
+    if (all_matched)
     {
         NRF_LOG_INFO("NVRAM validation passed: all values match.");
         NRF_LOG_FLUSH();
     }
+    return all_matched;
 }
 
 /**
@@ -505,22 +506,28 @@ bool init_pcap04()
 
     NRF_LOG_INFO("Config has been written");
     NRF_LOG_FLUSH();
-    nrf_delay_ms(100);
+    nrf_delay_ms(10);
 
-    readall_nvram();
+    //readall_nvram();
 
-    NRF_LOG_INFO("NVRAM has been read");
+    //NRF_LOG_INFO("NVRAM has been read");
 
-    NRF_LOG_INFO("RUNBIT: on PCAP NVRAM - 0x%02X", pcap_nvram_mirror.CFG.CFG47.REGVAL);
-    NRF_LOG_INFO("RUNBIT: on NRF NVRAM - 0x%02X", pcap_nvram.CFG.CFG47.REGVAL);
-    NRF_LOG_FLUSH();
+    //NRF_LOG_INFO("RUNBIT: on PCAP NVRAM - 0x%02X", pcap_nvram_mirror.CFG.CFG47.REGVAL);
+    //NRF_LOG_INFO("RUNBIT: on NRF NVRAM - 0x%02X", pcap_nvram.CFG.CFG47.REGVAL);
+    //NRF_LOG_FLUSH();
 
     writeall_nvram();
 
     NRF_LOG_INFO("NVRAM has been written");
     NRF_LOG_FLUSH();
 
-    validate_nvram();
+    bool nvram_ok = validate_nvram();
+
+    if (!nvram_ok) {
+        NRF_LOG_ERROR("NVRAM validation failed: mismatches found. Initialization aborted.");
+        initialized = false;
+        return false;
+    }
 
     NRF_LOG_INFO("RUNBIT: on PCAP NVRAM valid - 0x%02X", pcap_nvram_mirror.CFG.CFG47.REGVAL);
 
@@ -538,12 +545,12 @@ bool init_pcap04()
 
     NRF_LOG_INFO("Valid config:");
 
-    print_config();
+    //print_config();
 
     NRF_LOG_INFO("PCAP initialized");
     NRF_LOG_FLUSH();
 
-    log_dummy_pcap_measurements();
+    //log_dummy_pcap_measurements();
 
     return initialized;
 }
